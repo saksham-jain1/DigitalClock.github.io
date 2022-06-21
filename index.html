@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Digital Clock</title>
+</head>
+<body onload="setTime()">
+    <script>
+        function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+   }
+        const setTime = async() =>{
+            const d = new Date();
+            if(d.getHours()%12<10)
+            document.getElementById('hours').innerText='0'+d.getHours()%12;
+            else
+            document.getElementById('hours').innerText=+d.getHours()%12;
+
+            if(d.getMinutes()<10)
+            document.getElementById('min').innerText='0'+d.getMinutes();
+            else
+            document.getElementById('min').innerText=+d.getMinutes();
+
+            if(d.getSeconds()<10)
+            document.getElementById('sec').innerText='0'+d.getSeconds();
+            else
+            document.getElementById('sec').innerText=d.getSeconds();
+
+            if(d.getHours()/12<1)
+            document.getElementById('m').innerText='AM';
+            else
+            document.getElementById('m').innerText='PM';
+            await sleep(1000);
+            setTime();
+        }
+        const updateTime = () =>{
+
+        }
+    </script>
+    <script src="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <div class="col-md-9 col-sm-10 col-12 m-auto p-5" id="clock">
+        <h1>
+            <span id="hours"></span>:
+            <span id="min"></span>:
+            <span id="sec"></span>
+            <span id="m"></span>
+        </h1>
+    </div>
+</body>
+</html>
