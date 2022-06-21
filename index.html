@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +15,9 @@
    }
         const setTime = async() =>{
             const d = new Date();
-            if(d.getHours()%12<10)
+            if(d.getHours()===12)
+            document.getElementById('hours').innerText='12';
+            else if(d.getHours()%12<10)
             document.getElementById('hours').innerText='0'+d.getHours()%12;
             else
             document.getElementById('hours').innerText=+d.getHours()%12;
