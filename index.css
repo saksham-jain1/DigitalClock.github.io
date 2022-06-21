@@ -1,0 +1,22 @@
+body{
+    background: #000;
+}
+#clock {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(9, 9, 9, 0.662);
+}
+
+h1:hover {
+    color: rgba(27, 196, 24, 0.662);
+}
+h1{
+    font-size: 8vw;
+    font-weight: bolder;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
